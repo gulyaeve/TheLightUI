@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isLight = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack{
+            isLight ? Color.white : Color.black
+        }
+        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        .onTapGesture {
+            isLight.toggle()
+        }
     }
 }
 
